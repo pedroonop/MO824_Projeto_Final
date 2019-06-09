@@ -28,13 +28,21 @@ public class BinPacking2D implements Evaluator<Alocation>{
 	@Override
 	public Double evaluate(Solution<Alocation> sol) {
 		
-		Double maximum = Double.NEGATIVE_INFINITY;
+		boolean[] usedBin = new boolean[size];
+		Double cost = 0.0;
 		
-		for (Alocation aloc : sol) {
-			maximum = Math.max(maximum, aloc.bin);
+		for (int i = 0; i < size; i++) {
+			usedBin[i] = false;
 		}
 		
-		return maximum + 1;
+		for (Alocation aloc : sol) {
+			if (!usedBin[aloc.position.bin]) {
+				usedBin[aloc.position.bin] = true;
+				cost++;
+			}
+		}
+		
+		return sol.cost = cost;
 	}
 
 	@Override

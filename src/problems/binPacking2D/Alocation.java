@@ -4,16 +4,11 @@ public class Alocation {
 		
 	public Item item;
 	
-	public Integer bin;
+	public Position position;
 	
-	public Integer h;
-	
-	public Integer w;
-	
-	public Alocation(Integer bin, Integer h, Integer w) {
-		this.bin = bin;
-		this.h = h;
-		this.w = w;
+	public Alocation(Item item, Position position) {
+		this.item = item;
+		this.position = position;
 	}
 	
 }
