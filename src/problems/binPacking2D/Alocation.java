@@ -11,4 +11,8 @@ public class Alocation {
 		this.position = position;
 	}
 	
+	public boolean equals(Alocation a) {
+		return this.item.equals(a.item) && bin == a.bin && h == a.h && w == a.w;
+	}
+	
 }

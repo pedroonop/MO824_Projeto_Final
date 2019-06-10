@@ -47,20 +47,34 @@ public class BinPacking2D implements Evaluator<Alocation>{
 
 	@Override
 	public Double evaluateInsertionCost(Alocation elem, Solution<Alocation> sol) {
-		// TODO Auto-generated method stub
-		return null;
+		if (elem.bin >= sol.cost) return elem.bin - sol.cost + 1;
+		return 0.0;
 	}
 
 	@Override
 	public Double evaluateRemovalCost(Alocation elem, Solution<Alocation> sol) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Double maximum = Double.NEGATIVE_INFINITY;
+		
+		for (Alocation aloc : sol) {
+			if (!elem.equals(aloc)) maximum = Math.max(maximum, aloc.bin);
+		}
+		
+		return maximum - sol.cost;
 	}
 
 	@Override
 	public Double evaluateExchangeCost(Alocation elemIn, Alocation elemOut, Solution<Alocation> sol) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Double maximum = Double.NEGATIVE_INFINITY;
+		
+		for (Alocation aloc : sol) {
+			if (!elemOut.equals(aloc)) maximum = Math.max(maximum, aloc.bin);
+		}
+		
+		if (elemIn.bin >= maximum) return maximum - sol.cost + 1;
+		
+		return maximum;
 	}
 
 }
