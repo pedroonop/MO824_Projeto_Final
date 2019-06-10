@@ -27,6 +27,10 @@ public class TS_BinPacking2D extends AbstractTS<Alocation>{
 	private final Item[] items;
 	
 	private ArrayList<Alocation>[] bins;
+	
+	private final Item fake = new Item(-1, -1);
+	
+	private ArrayDeque<Item> TL_items;
 
 	@SuppressWarnings("unchecked")
 	public TS_BinPacking2D(Integer tenure, Integer iterations, Integer H, Integer W, Integer size, Item items[]) {
@@ -70,7 +74,7 @@ public class TS_BinPacking2D extends AbstractTS<Alocation>{
 	@Override
 	public ArrayDeque<Alocation> makeTL() {
 		// TODO Auto-generated method stub
-		return null;
+		return null;		
 	}
 
 	@Override
