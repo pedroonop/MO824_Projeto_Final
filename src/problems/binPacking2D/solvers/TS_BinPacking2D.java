@@ -151,7 +151,7 @@ public class TS_BinPacking2D extends AbstractTS<Alocation>{
 				Integer H_ = binH.get(b), W_ = 0;
 				binH.set(b, binH.get(b) + biggestH.get(i));
 				for (Item item : shelves.get(i)) {
-					sol.add(new Alocation(item, new Position(binH.size() - 1, H_, W_)));
+					sol.add(new Alocation(item, new Position(b, H_, W_)));
 					W_ += item.w;
 				}				
 			}
