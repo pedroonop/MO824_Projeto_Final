@@ -10,13 +10,12 @@ using namespace std;
 #define Alocation pair<Item, Position>
 #define Solution vector<Alocation>
 #define pb(x) push_back(x)
-#define EPS 0.0001
 
 int bestCost, incumbentCost;
 Solution bestSol, incumbentSol;
 int iterations, tenure;
 list<Item> TL1;
-list<double> TL2;
+list<int> TL2;
 
 int H, W;
 int n, size;
@@ -25,7 +24,6 @@ vector<vector<Alocation> > bins;
 
 const double alpha = 1.0;
 const Item fake = Item(-1, -1);
-const double fake_ = -1;
 
 int compute_cost(Solution sol){
 	bool used_bin[size];
@@ -48,6 +46,11 @@ void organize(){
 		while (i < size && bins[i].size() != 0) i++;
 		while (j >= 0 && bins[j].size() == 0) j--;
 		if (i < size && j >= 0 && i < j) swap(bins[i], bins[j]);
+	}
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < bins[i].size(); j++){
+			bins[i][j].ss.ff = i;
+		}
 	}
 }
 
@@ -198,9 +201,9 @@ bool is_tabu(Item item){
 	return false;
 }
 
-bool is_tabu(double PHI){
-	for (double d : TL2){
-		if (fabs(d - PHI) < EPS) return true;
+bool contains(Item i, vector<Item> v){
+	for (Item i_ : v){
+		if (i == i_) return true;
 	}
 	return false;
 }
@@ -237,7 +240,6 @@ bool first_neighborhood(){
 		if (!removed[j]) aux.pb(bins[b][j]);
 	}
 	bins[b] = aux;
-	organize();
 	if (!flag){
 		TL1.pop_front();
 		TL1.pb(fake);
@@ -249,9 +251,9 @@ int second_neighborhood(){
 	int b = weakest_bin();
 	for (int j = 0; j < bins[b].size(); j++){
 		for (int h = 0; h < size; h++){
-			if (h == b) continue;
+			if (h == b || bins[h].size() == 0) continue;
 			for (int k = 0; k < size; k++){
-				if (k == b) continue;
+				if (k == b || k == h || bins[k].size() == 0) continue;
 				vector<Item> S;
 				S.pb(bins[b][j].ff);
 				for (Alocation aloc : bins[h]) S.pb(aloc.ff);
@@ -281,23 +283,6 @@ int second_neighborhood(){
 						double phib = compute_phi(b), phih = compute_phi(h), phik = compute_phi(k);
 						if (phib < phih && phib < phik) return 221;
 					}
-					return 222;
-				}
-				else if (cost == 3){
-					vector<Item> v;
-					for (Alocation aloc : sol)
-						v[aloc.ss.ff].pb(aloc.ff);
-
-					double phi[3];
-					for (int i = 0; i < 3; i++)
-						phi[i] = compute_phi(v[i]);
-
-					vector<Item> T;
-					if (phi[0] < phi[1] && phi[0] < phi[2]) T = v[0];
-					else if (phi[1] < phi[2]) T = v[1];
-					else T = v[2];
-
-
 				}
 			}
 		}
@@ -307,12 +292,14 @@ int second_neighborhood(){
 
 void neighborhood_move(){
 	while (iterations--){
-		while (first_neighborhood());
+		while (first_neighborhood()) organize();
 		int code = second_neighborhood();
 		while (code != 1 && code != 21 && code != 221 && code != 4){
 			code = second_neighborhood();
+			organize();
 		}
 	}
+	organize();
 }
 
 int main(){
@@ -322,7 +309,6 @@ int main(){
 
 	for (int i = 0; i < tenure; i++){
 		TL1.pb(fake);
-		TL2.pb(fake_);
 	}
 
 	H = W = 10;
@@ -335,9 +321,12 @@ int main(){
 	items.pb(Item(2,2));
 	items.pb(Item(9,10));
 	items.pb(Item(1,10));
+	items.pb(Item(1,9));
+	items.pb(Item(2,10));
 	n = size = items.size();
 
 	bins.resize(size);
+
 
 //	Solution sol = FBS(items);
 	Solution sol = initial_solution(items);
