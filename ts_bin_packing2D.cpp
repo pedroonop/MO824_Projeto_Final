@@ -11,11 +11,8 @@ using namespace std;
 #define Solution vector<Alocation>
 #define pb(x) push_back(x)
 
-int bestCost, incumbentCost;
-Solution bestSol, incumbentSol;
 int iterations, tenure;
 list<Item> TL1;
-list<int> TL2;
 
 int H, W;
 int n, size;
@@ -72,6 +69,7 @@ Solution pack(){
 }
 
 bool compare_W(Item a, Item b){
+
 	return a.ss > b.ss;
 }
 
