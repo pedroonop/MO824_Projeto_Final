@@ -1,6 +1,7 @@
 import os
+import sys
 
-mode = int(argv[1])
+mode = int(sys.argv[1])
 
 k = 10
 classes = 6
