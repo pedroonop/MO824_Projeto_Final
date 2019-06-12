@@ -11,6 +11,8 @@ using namespace std;
 #define Solution vector<Alocation>
 #define pb(x) push_back(x)
 
+clock_t ini;
+int timeLimite = 60000;
 int iterations, tenure;
 list<Item> TL;
 
@@ -290,11 +292,14 @@ int second_neighborhood(){
 
 void solve(){
 	while (iterations > 0){
+		if ((clock() - ini)/CLOCKS_PER_SEC > timeLimite) break;
 		while (iterations-- > 0 && first_neighborhood()){
+			if ((clock() - ini)/CLOCKS_PER_SEC > timeLimite) break;
 			organize();
 		}
 		int code = second_neighborhood();
 		while (iterations-- > 0 && code != 1 && code != 21 && code != 221 && code != 4){
+			if ((clock() - ini)/CLOCKS_PER_SEC > timeLimite) break;
 			code = second_neighborhood();
 			organize();
 		}
@@ -326,6 +331,8 @@ int main(){
 
 	Solution sol = initial_solution(items);
 	unpack(sol);
+
+	ini = clock();
 
 	solve();
 
