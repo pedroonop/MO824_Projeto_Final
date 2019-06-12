@@ -1,0 +1,434 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define ii pair<int, int>
+#define Item ii
+#define Position pair<int, ii>
+#define ff first
+#define ss second
+#define Alocation pair<Item, Position>
+#define Solution vector<Alocation>
+#define pb(x) push_back(x)
+
+int best_cost = INT_MAX;
+Solution best_sol;
+
+int iterations, tenure;
+list<Item> TL;
+int div_freq;
+
+int H, W;
+int n, size;
+vector<Item> items;
+vector<vector<Alocation> > bins;
+
+const double alpha = 1.0;
+const Item fake = Item(-1, -1);
+
+long long int freq[101][101][101];
+
+int compute_cost(Solution sol){
+	bool used_bin[size];
+	for (int i = 0; i < size; i++){
+		used_bin[i] = false;
+	}
+	int cost = 0;
+	for (Alocation aloc : sol){
+		if (!used_bin[aloc.ss.ff]){
+			used_bin[aloc.ss.ff] = true;
+			cost++;
+		}
+	}
+	return cost;
+}
+
+void organize(){
+	int i = 0, j = size - 1;
+	while (i < j){
+		while (i < size && bins[i].size() != 0) i++;
+		while (j >= 0 && bins[j].size() == 0) j--;
+		if (i < size && j >= 0 && i < j) swap(bins[i], bins[j]);
+	}
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < bins[i].size(); j++){
+			bins[i][j].ss.ff = i;
+		}
+	}
+}
+
+void unpack(Solution sol){
+	for (int i = 0; i < size; i++) bins[i].clear();
+	for (Alocation aloc : sol){
+		bins[aloc.ss.ff].pb(aloc);
+	}
+}
+
+Solution pack(){
+	Solution sol;
+	for (int i = 0; i < size; i++){
+		for (Alocation aloc : bins[i]){
+			sol.pb(aloc);
+		}
+	}
+	return sol;
+}
+
+bool compare_W(Item a, Item b){
+
+	return a.ss > b.ss;
+}
+
+Solution FBS(vector<Item> S){
+	vector<vector<Item> > shelves;
+	vector<int> acW, bigH;
+
+	sort(S.begin(), S.end(), compare_W);
+
+	for (Item item : S){
+		int res = INT_MAX;
+		int b = 0;
+		for (int i = 0; i < (int)shelves.size(); i++){
+			if (acW[i] + item.ss <= W && W - acW[i] - item.ss < res){
+				res = W - acW[i] - item.ss;
+				b = i;
+			}
+		}
+		if (res < INT_MAX){
+			acW[b] += item.ss;
+			bigH[b] = max(bigH[b], item.ff);
+			shelves[b].pb(item);
+		}
+		else{
+			acW.pb(item.ss);
+			bigH.pb(item.ff);
+			shelves.pb(vector<Item>());
+			shelves.back().pb(item);
+		}
+	}
+
+
+	for (int i = 1; i < shelves.size(); i++){
+		for (int j = i - 1; j >= 0 && bigH[j] < bigH[j + 1]; j--){
+			swap(bigH[j], bigH[j + 1]);
+			swap(shelves[j], shelves[j + 1]);
+		}
+	}
+
+	Solution sol;
+	vector<int> bin_H;
+
+	for (int i = 0; i < shelves.size(); i++){
+		int res = INT_MAX;
+		int b = 0;
+		for (int j = 0; j < bin_H.size(); j++){
+			if (bin_H[j] + bigH[i] <= H && H - bin_H[j] - bigH[i] < res){
+				res = H - bin_H[j] - bigH[i];
+				b = j;
+			}
+		}
+		if (res < INT_MAX){
+			int H_ = bin_H[b], W_ = 0;
+			bin_H[b] += bigH[i];
+			for (Item item : shelves[i]){
+				sol.pb(Alocation(item, Position(b, ii(H_, W_))));
+				W_ += item.ss;
+			}
+		}
+		else{
+			int W_ = 0;
+			bin_H.pb(bigH[i]);
+			for (Item item : shelves[i]){
+				sol.pb(Alocation(item, Position(bin_H.size() - 1, ii(0, W_))));
+				W_ += item.ss;
+			}
+		}
+	}
+
+	return sol;
+}
+
+void show_solution(Solution sol){
+	for (Alocation aloc : sol){
+		printf("(h: %d w: %d) bin: %d h_: %d w_: %d\n", aloc.ff.ff, aloc.ff.ss, aloc.ss.ff, aloc.ss.ss.ff, aloc.ss.ss.ss);
+	}	
+}
+
+Solution initial_solution(vector<Item> items){
+	Solution sol;
+	for (int i = 0; i < items.size(); i++){
+		sol.pb(Alocation(items[i], Position(i, ii(0, 0))));
+	}
+	return sol;
+}
+
+double compute_phi(int i){
+	double phi = 0;
+	for (Alocation aloc : bins[i]){
+		phi += (aloc.ff.ff * aloc.ff.ss);
+	}
+	phi *= (alpha/(H * W));
+	phi -= (bins[i].size() * 1.0)/size;
+	return phi;		
+}
+
+double compute_phi(vector<Item> v){
+	double phi = 0;
+	for (Item item : v){
+		phi += (item.ff * item.ss);
+	}
+	phi *= (alpha/(H * W));
+	phi -= (v.size() * 1.0)/size;
+	return phi;	
+}
+
+int weakest_bin(){
+	double minimum = INT_MAX;
+	int b = 0;
+
+	for (int i = 0; i < size; i++){
+		if (bins[i].size() == 0) continue;
+		double phi = compute_phi(i);
+		if (phi < minimum){
+			minimum = phi;
+			b = i;
+		}
+	}
+
+	return b;
+}
+
+bool is_tabu(Item item){
+	for (Item item_ : TL){
+		if (item == item_) return true;
+	}
+	return false;
+}
+
+bool contains(Item i, vector<Item> v){
+	for (Item i_ : v){
+		if (i == i_) return true;
+	}
+	return false;
+}
+
+void update_freq(){
+	for (int i = 0; i < size; i++){
+		for (Alocation aloc : bins[i]){
+			freq[aloc.ff.ff][aloc.ff.ss][aloc.ss.ff]++;
+		}
+	}
+}
+
+void diversification(){
+	int h, w, b;
+	long long int minimum = LONG_MAX;
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
+			for (int k = 0; k < size; k++){
+				if (freq[i][j][k] == -1){
+					continue;
+				}
+				if (freq[i][j][k] < minimum){
+					minimum = freq[i][j][k];
+					h = i;
+					w = j;
+					b = k;
+				}
+			}
+		}
+	}
+
+	int b_, i_;
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < bins[i].size(); j++){
+			if (bins[i][j].ff.ff == h && bins[i][j].ff.ss == w){
+				b_ = i;
+				i_ = j;
+				i = size;
+				break;
+			}
+		}
+	}
+
+	vector<Item> T;
+	T.pb(bins[b_][i_].ff);
+	for (Alocation aloc : bins[b]){
+		T.pb(aloc.ff);
+	}
+	Solution sol = FBS(T);
+	int cost = compute_cost(sol);
+	if (cost == 1){
+		bins[b_].erase(bins[b_].begin() + i_);
+		bins[b].clear();
+		for (Alocation aloc : sol){
+			bins[b].pb(Alocation(aloc.ff, Position(b, aloc.ss.ss)));
+		}
+	}
+	else if (cost == 2){
+		bins[b_].erase(bins[b_].begin() + i_);
+		bins[b].clear();
+		for (Alocation aloc : sol){
+			if (aloc.ss.ff == 0) bins[b].pb(Alocation(aloc.ff, Position(b, aloc.ss.ss)));
+			bins[size - 1].pb(Alocation(aloc.ff, Position(size - 1, aloc.ss.ss)));
+		}
+	}
+}
+
+bool first_neighborhood(){
+	int b = weakest_bin();
+	bool removed[bins[b].size()];
+	for (int i = 0; i < bins[b].size(); i++) removed[i] = false;
+	bool flag = false;
+	for (int j = 0; j < bins[b].size(); j++){
+		if (bins[b].size() > 1 && is_tabu(bins[b][j].ff)) continue;
+		for (int i = 0; i < size; i++){
+			if (i == b || bins[i].size() == 0) continue;
+			vector<Item> Si;
+			for (Alocation aloc : bins[i]) Si.pb(aloc.ff);
+			Si.pb(bins[b][j].ff);
+			Solution sol = FBS(Si);
+			int cost = compute_cost(sol);
+			if (cost == 1){
+				bins[i].clear();
+				for (Alocation aloc : sol){
+					bins[i].pb(Alocation(aloc.ff, Position(i, aloc.ss.ss)));
+				}
+				TL.pb(bins[b][j].ff);
+				TL.pop_front();
+				removed[j] = true;
+				flag = true;
+				break;
+			}
+		}
+	}
+	vector<Alocation> aux;
+	for (int j = 0; j < bins[b].size(); j++){
+		if (!removed[j]) aux.pb(bins[b][j]);
+	}
+	bins[b] = aux;
+	if (!flag){
+		TL.pop_front();
+		TL.pb(fake);
+	}
+	return flag;
+}
+
+int second_neighborhood(){
+	int b = weakest_bin();
+	for (int j = 0; j < bins[b].size(); j++){
+		for (int h = 0; h < size; h++){
+			if (h == b || bins[h].size() == 0) continue;
+			for (int k = 0; k < size; k++){
+				if (k == b || k == h || bins[k].size() == 0) continue;
+				vector<Item> S;
+				S.pb(bins[b][j].ff);
+				for (Alocation aloc : bins[h]) S.pb(aloc.ff);
+				for (Alocation aloc : bins[k]) S.pb(aloc.ff);
+				Solution sol = FBS(S);
+				int cost = compute_cost(sol);
+				if (cost == 1){
+					bins[h].clear();
+					bins[k].clear();
+					for (Alocation aloc : sol){
+						if (aloc.ss.ff == 0) bins[h].pb(Alocation(aloc.ff, Position(h, aloc.ss.ss)));
+						else bins[k].pb(Alocation(aloc.ff, Position(k, aloc.ss.ss)));
+					}
+					bins[b].erase(bins[b].begin() + j);
+					return 1;
+				}
+				else if (cost == 2){
+					bins[h].clear();
+					bins[k].clear();
+					for (Alocation aloc : sol){
+						if (aloc.ss.ff == 0) bins[h].pb(Alocation(aloc.ff, Position(h, aloc.ss.ss)));
+						else bins[k].pb(Alocation(aloc.ff, Position(k, aloc.ss.ss)));
+					}
+					bins[b].erase(bins[b].begin() + j);
+					if (bins[b].empty()) return 21;
+					else{
+						double phib = compute_phi(b), phih = compute_phi(h), phik = compute_phi(k);
+						if (phib < phih && phib < phik) return 221;
+					}
+				}
+			}
+		}
+	}
+	return 4;
+}
+
+void solve(){
+	int last_div = iterations;
+	while (iterations > 0){
+		while (iterations-- > 0 && first_neighborhood()){
+			organize();
+		}
+		int code = second_neighborhood();
+		while (iterations-- > 0 && code != 1 && code != 21 && code != 221 && code != 4){
+			code = second_neighborhood();
+			organize();
+		}
+		update_freq();
+		if (last_div - iterations >= div_freq){
+			last_div = iterations;
+			Solution sol = pack();
+			int cost = compute_cost(sol);
+
+			if (cost < best_cost){
+				best_cost = cost;
+				best_sol = sol;
+			}
+
+			diversification();
+			organize();
+		}
+		TL.pop_front();
+		TL.pb(fake);
+	}
+	Solution sol = pack();
+	int cost = compute_cost(sol);
+
+	if (cost < best_cost){
+		best_cost = cost;
+		best_sol = sol;
+	}
+	organize();
+}
+
+int main(){
+
+	iterations = 100;
+	tenure = 20;
+	div_freq = 20;
+
+	for (int i = 0; i < tenure; i++){
+		TL.pb(fake);
+	}
+
+	scanf("%d", &size);
+	scanf("%d %d", &H, &W);
+	for (int i = 0; i < size; i++){
+		int h, w;
+		scanf("%d %d", &h, &w);
+		items.pb(Item(h, w));
+	}
+
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
+			for (int k = 0; k < size; k++){
+				freq[i][j][k] = -1;
+			}
+		}
+	}
+
+	bins.resize(size);
+
+	Solution sol = initial_solution(items);
+	unpack(sol);
+
+	solve();
+
+	printf("%d\n", best_cost);
+
+	return 0;
+}
