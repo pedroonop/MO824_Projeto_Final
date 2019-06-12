@@ -289,13 +289,17 @@ int second_neighborhood(){
 }
 
 void solve(){
-	while (iterations--){
-		while (first_neighborhood()) organize();
+	while (iterations > 0){
+		while (iterations-- > 0 && first_neighborhood()){
+			organize();
+		}
 		int code = second_neighborhood();
-		while (code != 1 && code != 21 && code != 221 && code != 4){
+		while (iterations-- > 0 && code != 1 && code != 21 && code != 221 && code != 4){
 			code = second_neighborhood();
 			organize();
 		}
+		TL.pop_front();
+		TL.pb(fake);
 	}
 	organize();
 }
@@ -303,7 +307,7 @@ void solve(){
 int main(){
 
 	iterations = 100;
-	tenure = 3;
+	tenure = 20;
 
 	for (int i = 0; i < tenure; i++){
 		TL.pb(fake);
@@ -325,7 +329,9 @@ int main(){
 
 	solve();
 
-	printf("%d\n", compute_cost(pack()));
+	sol = pack();
+
+	printf("%d\n", compute_cost(sol));
 
 	return 0;
 }
