@@ -11,6 +11,9 @@ using namespace std;
 #define Solution vector<Alocation>
 #define pb(x) push_back(x)
 
+clock_t ini;
+int time_limit = 600;
+
 int best_cost = INT_MAX;
 Solution best_sol;
 
@@ -360,11 +363,14 @@ int second_neighborhood(){
 void solve(){
 	int last_div = iterations;
 	while (iterations > 0){
+		if ((clock() - ini)/CLOCKS_PER_SEC >= time_limit) break;
 		while (iterations-- > 0 && first_neighborhood()){
+			if ((clock() - ini)/CLOCKS_PER_SEC >= time_limit) break;
 			organize();
 		}
 		int code = second_neighborhood();
 		while (iterations-- > 0 && code != 1 && code != 21 && code != 221 && code != 4){
+			if ((clock() - ini)/CLOCKS_PER_SEC >= time_limit) break;
 			code = second_neighborhood();
 			organize();
 		}
@@ -397,7 +403,7 @@ void solve(){
 
 int main(){
 
-	iterations = 100;
+	iterations = 1000000000;
 	tenure = 20;
 	div_freq = 20;
 
@@ -425,6 +431,8 @@ int main(){
 
 	Solution sol = initial_solution(items);
 	unpack(sol);
+
+	ini = clock();
 
 	solve();
 
