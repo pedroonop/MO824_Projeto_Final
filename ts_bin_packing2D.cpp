@@ -12,7 +12,7 @@ using namespace std;
 #define pb(x) push_back(x)
 
 int iterations, tenure;
-list<Item> TL1;
+list<Item> TL;
 
 int H, W;
 int n, size;
@@ -193,7 +193,7 @@ int weakest_bin(){
 }
 
 bool is_tabu(Item item){
-	for (Item item_ : TL1){
+	for (Item item_ : TL){
 		if (item == item_) return true;
 	}
 	return false;
@@ -225,8 +225,8 @@ bool first_neighborhood(){
 				for (Alocation aloc : sol){
 					bins[i].pb(Alocation(aloc.ff, Position(i, aloc.ss.ss)));
 				}
-				TL1.pb(bins[b][j].ff);
-				TL1.pop_front();
+				TL.pb(bins[b][j].ff);
+				TL.pop_front();
 				removed[j] = true;
 				flag = true;
 				break;
@@ -239,8 +239,8 @@ bool first_neighborhood(){
 	}
 	bins[b] = aux;
 	if (!flag){
-		TL1.pop_front();
-		TL1.pb(fake);
+		TL.pop_front();
+		TL.pb(fake);
 	}
 	return flag;
 }
@@ -288,7 +288,7 @@ int second_neighborhood(){
 	return 4;
 }
 
-void neighborhood_move(){
+void solve(){
 	while (iterations--){
 		while (first_neighborhood()) organize();
 		int code = second_neighborhood();
@@ -306,37 +306,26 @@ int main(){
 	tenure = 3;
 
 	for (int i = 0; i < tenure; i++){
-		TL1.pb(fake);
+		TL.pb(fake);
 	}
 
-	H = W = 10;
+	scanf("%d", &size);
+	scanf("%d %d", &H, &W);
+	for (int i = 0; i < size; i++){
+		int h, w;
+		scanf("%d %d", &h, &w);
+		items.pb(Item(h, w));
+	}
 
-	items.pb(Item(6,6));
-	items.pb(Item(6,4));
-	items.pb(Item(5,5));
-	items.pb(Item(4,10));
-	items.pb(Item(1,1));
-	items.pb(Item(2,2));
-	items.pb(Item(9,10));
-	items.pb(Item(1,10));
-	items.pb(Item(1,9));
-	items.pb(Item(2,10));
-	n = size = items.size();
 
 	bins.resize(size);
 
-
-//	Solution sol = FBS(items);
 	Solution sol = initial_solution(items);
 	unpack(sol);
 
-	neighborhood_move();
+	solve();
 
-	show_solution(pack());
-
-	printf("\n");
-
-	show_solution(FBS(items));
+	printf("%d\n", compute_cost(pack()));
 
 	return 0;
 }
