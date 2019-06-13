@@ -1,0 +1,145 @@
+95 88
+94 48
+92 66
+89 69
+89 73
+88 77
+86 84
+86 39
+85 65
+83 75
+81 54
+79 56
+76 40
+75 50
+74 29
+72 14
+72 83
+71 100
+70 86
+69 71
+66 86
+66 81
+66 96
+66 93
+65 85
+61 62
+59 83
+58 66
+54 91
+54 85
+44 72
+34 6
+30 5
+18 98
+18 86
+17 1
+17 84
+9 67
+6 78
+1 80
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 158 rows, 3280 columns and 3239 nonzeros
+Variable types: 0 continuous, 3280 integer (3280 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 28.0000000
+Presolve removed 126 rows and 3184 columns
+Presolve time: 0.00s
+Presolved: 32 rows, 96 columns, 191 nonzeros
+Found heuristic solution: objective 26.0000000
+Variable types: 0 continuous, 96 integer (96 binary)
+
+Root relaxation: objective 2.500000e+01, 22 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      25.0000000   25.00000  0.00%     -    0s
+
+Explored 0 nodes (22 simplex iterations) in 0.00 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 25 26 27 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.500000000000e+01, best bound 2.500000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[5]
+q[6]
+q[7]
+q[8]
+q[9]
+q[10]
+q[15]
+q[16]
+q[17]
+q[18]
+q[19]
+q[20]
+q[21]
+q[22]
+q[23]
+q[24]
+q[25]
+q[26]
+q[28]
+q[29]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[5]
+y[6]
+y[7]
+y[8]
+y[9]
+y[10]
+y[15]
+y[16]
+y[17]
+y[18]
+y[19]
+y[20]
+y[21]
+y[22]
+y[23]
+y[24]
+y[25]
+y[26]
+y[28]
+y[29]
+y[30]
+y[32]
+y[33]
+y[34]
+y[36]
+y[37]
+y[38]
+y[39]
+x[0][31]
+x[0][35]
+x[1][13]
+x[7][11]
+x[8][14]
+x[10][12]
+x[15][27]
+z[0][39]
+z[1][38]
+z[8][37]
+z[9][36]
+z[20][32]
+z[28][30]
+z[29][33]
+z[29][34]
+Obj: 25.0

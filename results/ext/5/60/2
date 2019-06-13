@@ -1,0 +1,191 @@
+100 57
+99 28
+97 55
+97 76
+96 87
+95 93
+92 94
+92 89
+92 88
+91 82
+89 81
+89 12
+88 76
+87 83
+86 76
+85 49
+85 61
+84 32
+84 84
+82 53
+82 82
+82 54
+81 93
+80 65
+79 77
+79 78
+79 42
+78 56
+77 78
+76 52
+74 51
+73 32
+72 61
+71 64
+71 75
+70 50
+70 64
+70 98
+69 98
+69 77
+66 52
+65 93
+65 65
+64 73
+63 78
+57 98
+56 53
+55 70
+50 82
+50 50
+50 82
+45 26
+44 18
+35 24
+32 47
+16 19
+15 7
+11 72
+7 6
+4 13
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 238 rows, 7320 columns and 7259 nonzeros
+Variable types: 0 continuous, 7320 integer (7320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 45.0000000
+Presolve removed 238 rows and 7320 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 2: 43 45 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.300000000000e+01, best bound 4.300000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[5]
+q[6]
+q[7]
+q[8]
+q[9]
+q[10]
+q[11]
+q[12]
+q[13]
+q[14]
+q[15]
+q[16]
+q[17]
+q[18]
+q[19]
+q[20]
+q[21]
+q[22]
+q[23]
+q[24]
+q[25]
+q[28]
+q[29]
+q[33]
+q[34]
+q[35]
+q[36]
+q[37]
+q[38]
+q[39]
+q[40]
+q[41]
+q[42]
+q[43]
+q[44]
+q[45]
+q[46]
+q[48]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[5]
+y[6]
+y[7]
+y[8]
+y[9]
+y[10]
+y[11]
+y[12]
+y[13]
+y[14]
+y[15]
+y[16]
+y[17]
+y[18]
+y[19]
+y[20]
+y[21]
+y[22]
+y[23]
+y[24]
+y[25]
+y[28]
+y[29]
+y[33]
+y[34]
+y[35]
+y[36]
+y[37]
+y[38]
+y[39]
+y[40]
+y[41]
+y[42]
+y[43]
+y[44]
+y[45]
+y[46]
+y[48]
+y[50]
+y[54]
+y[57]
+y[58]
+y[59]
+x[1][47]
+x[2][26]
+x[5][56]
+x[9][52]
+x[10][55]
+x[11][27]
+x[12][53]
+x[15][30]
+x[16][31]
+x[17][32]
+x[35][49]
+x[43][51]
+z[4][59]
+z[6][58]
+z[10][57]
+z[41][54]
+z[48][50]
+Obj: 43.0

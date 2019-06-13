@@ -1,0 +1,208 @@
+10 1
+10 8
+10 4
+10 2
+10 5
+10 1
+10 3
+9 1
+9 5
+9 9
+9 7
+9 4
+9 9
+9 4
+8 7
+8 7
+8 3
+8 4
+8 8
+8 4
+8 7
+8 3
+7 2
+7 9
+7 1
+7 4
+7 10
+7 5
+6 1
+6 5
+6 4
+6 6
+6 2
+6 4
+5 2
+5 3
+5 1
+5 7
+4 9
+4 6
+4 10
+4 3
+4 4
+4 6
+4 9
+4 3
+4 8
+3 1
+3 7
+3 7
+3 9
+3 10
+2 4
+2 10
+2 1
+2 1
+1 2
+1 7
+1 1
+1 10
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 238 rows, 7320 columns and 7249 nonzeros
+Variable types: 0 continuous, 7320 integer (7320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 29.0000000
+Presolve removed 89 rows and 5744 columns
+Presolve time: 0.01s
+Presolved: 149 rows, 1576 columns, 3202 nonzeros
+Variable types: 0 continuous, 1576 integer (1576 binary)
+
+Root relaxation: objective 1.837989e+01, 385 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   18.37989    0   44   29.00000   18.37989  36.6%     -    0s
+H    0     0                      21.0000000   18.37989  12.5%     -    0s
+H    0     0                      20.0000000   18.37989  8.10%     -    0s
+     0     0   18.57907    0   73   20.00000   18.57907  7.10%     -    0s
+     0     0   18.59096    0   73   20.00000   18.59096  7.05%     -    0s
+     0     0   18.74917    0   62   20.00000   18.74917  6.25%     -    0s
+     0     0   18.77875    0   60   20.00000   18.77875  6.11%     -    0s
+     0     0   18.78654    0   59   20.00000   18.78654  6.07%     -    0s
+     0     0   18.84670    0   49   20.00000   18.84670  5.77%     -    0s
+     0     0   18.90385    0   65   20.00000   18.90385  5.48%     -    0s
+     0     0   18.90385    0   79   20.00000   18.90385  5.48%     -    0s
+     0     0   18.90909    0   27   20.00000   18.90909  5.45%     -    0s
+     0     0   18.90909    0   46   20.00000   18.90909  5.45%     -    0s
+     0     0   18.90909    0   81   20.00000   18.90909  5.45%     -    0s
+     0     0   18.90909    0   82   20.00000   18.90909  5.45%     -    0s
+     0     0   18.91240    0   74   20.00000   18.91240  5.44%     -    0s
+     0     0   18.97727    0   69   20.00000   18.97727  5.11%     -    0s
+     0     0     cutoff    0        20.00000   20.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 7
+  Cover: 29
+  Clique: 6
+  MIR: 12
+  StrongCG: 6
+  Zero half: 2
+
+Explored 1 nodes (2254 simplex iterations) in 0.19 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 20 21 29 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[4]
+q[5]
+q[6]
+q[7]
+q[12]
+q[13]
+q[14]
+q[15]
+q[17]
+q[22]
+q[23]
+q[26]
+q[28]
+q[29]
+q[34]
+q[35]
+q[39]
+y[0]
+y[1]
+y[2]
+y[4]
+y[5]
+y[6]
+y[7]
+y[12]
+y[13]
+y[14]
+y[15]
+y[17]
+y[22]
+y[23]
+y[26]
+y[28]
+y[29]
+y[34]
+y[35]
+y[38]
+y[39]
+y[40]
+y[41]
+y[43]
+y[44]
+y[47]
+y[50]
+y[51]
+y[52]
+y[53]
+y[57]
+y[59]
+x[0][10]
+x[1][3]
+x[2][11]
+x[4][8]
+x[5][18]
+x[6][20]
+x[7][9]
+x[12][24]
+x[13][27]
+x[14][16]
+x[15][21]
+x[17][19]
+x[17][32]
+x[22][25]
+x[22][30]
+x[23][36]
+x[28][31]
+x[29][33]
+x[34][46]
+x[35][37]
+x[38][54]
+x[39][42]
+x[41][48]
+x[43][45]
+x[44][58]
+x[47][49]
+x[52][55]
+x[52][56]
+z[7][59]
+z[14][53]
+z[15][52]
+z[17][57]
+z[22][47]
+z[23][51]
+z[26][50]
+z[28][43]
+z[29][41]
+z[34][38]
+z[35][40]
+z[39][44]
+Obj: 20.0

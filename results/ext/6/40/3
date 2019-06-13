@@ -1,0 +1,165 @@
+100 72
+100 58
+99 7
+98 40
+97 52
+92 7
+85 63
+76 48
+75 37
+73 18
+54 90
+50 33
+49 19
+48 44
+41 91
+41 26
+41 29
+39 38
+38 70
+37 15
+37 48
+31 34
+28 77
+27 7
+26 15
+24 49
+23 28
+22 77
+22 43
+19 36
+16 96
+14 42
+9 33
+9 39
+7 34
+4 30
+4 17
+3 32
+3 1
+2 27
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 158 rows, 3280 columns and 3238 nonzeros
+Variable types: 0 continuous, 3280 integer (3280 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 12.0000000
+Presolve removed 56 rows and 2318 columns
+Presolve time: 0.01s
+Presolved: 102 rows, 962 columns, 1959 nonzeros
+Variable types: 0 continuous, 962 integer (962 binary)
+
+Root relaxation: objective 7.682257e+00, 258 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    7.68226    0   45   12.00000    7.68226  36.0%     -    0s
+H    0     0                      10.0000000    7.68226  23.2%     -    0s
+H    0     0                       9.0000000    7.68226  14.6%     -    0s
+     0     0    7.80977    0   59    9.00000    7.80977  13.2%     -    0s
+     0     0    7.81049    0   74    9.00000    7.81049  13.2%     -    0s
+     0     0    7.84733    0   80    9.00000    7.84733  12.8%     -    0s
+     0     0    7.86683    0   90    9.00000    7.86683  12.6%     -    0s
+     0     0    7.87799    0   80    9.00000    7.87799  12.5%     -    0s
+     0     0    7.87841    0   83    9.00000    7.87841  12.5%     -    0s
+     0     0    7.87841    0   84    9.00000    7.87841  12.5%     -    0s
+     0     0    7.88515    0   83    9.00000    7.88515  12.4%     -    0s
+     0     0    7.89021    0   87    9.00000    7.89021  12.3%     -    0s
+     0     0    7.89035    0   89    9.00000    7.89035  12.3%     -    0s
+     0     0    7.89708    0   66    9.00000    7.89708  12.3%     -    0s
+     0     0    7.89708    0   46    9.00000    7.89708  12.3%     -    0s
+     0     0    7.89708    0   64    9.00000    7.89708  12.3%     -    0s
+     0     0    7.89708    0   67    9.00000    7.89708  12.3%     -    0s
+     0     0    7.92179    0   71    9.00000    7.92179  12.0%     -    0s
+     0     0    7.92741    0   70    9.00000    7.92741  11.9%     -    0s
+     0     0    7.92878    0   62    9.00000    7.92878  11.9%     -    0s
+     0     0    7.92964    0   63    9.00000    7.92964  11.9%     -    0s
+     0     0    7.92964    0   61    9.00000    7.92964  11.9%     -    0s
+     0     0    7.93179    0   72    9.00000    7.93179  11.9%     -    0s
+     0     0    7.93179    0   74    9.00000    7.93179  11.9%     -    0s
+     0     0    7.93205    0   79    9.00000    7.93205  11.9%     -    0s
+     0     0    7.98182    0   68    9.00000    7.98182  11.3%     -    0s
+     0     0    7.98487    0   49    9.00000    7.98487  11.3%     -    0s
+     0     0 infeasible    0         9.00000    9.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 24
+  Clique: 4
+  MIR: 5
+  StrongCG: 5
+
+Explored 1 nodes (2252 simplex iterations) in 0.27 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 9 9 10 12 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.000000000000e+00, best bound 9.000000000000e+00, gap 0.0000%
+q[0]
+q[1]
+q[4]
+q[6]
+q[7]
+q[10]
+q[11]
+q[14]
+q[17]
+y[0]
+y[1]
+y[4]
+y[6]
+y[7]
+y[10]
+y[11]
+y[14]
+y[15]
+y[16]
+y[17]
+y[21]
+y[22]
+y[26]
+y[27]
+y[30]
+y[31]
+y[32]
+y[35]
+y[37]
+x[0][2]
+x[0][5]
+x[1][3]
+x[4][29]
+x[6][8]
+x[7][9]
+x[7][12]
+x[11][13]
+x[14][23]
+x[15][20]
+x[16][18]
+x[17][19]
+x[21][25]
+x[22][24]
+x[26][28]
+x[27][36]
+x[30][38]
+x[31][33]
+x[32][34]
+x[37][39]
+z[4][37]
+z[6][32]
+z[6][35]
+z[7][26]
+z[10][16]
+z[11][15]
+z[14][21]
+z[14][22]
+z[17][27]
+z[17][30]
+z[17][31]
+Obj: 9.0

@@ -1,0 +1,197 @@
+10 2
+10 9
+10 10
+10 2
+10 8
+10 2
+10 2
+10 4
+10 8
+10 7
+9 3
+9 4
+9 4
+9 4
+8 8
+8 7
+8 4
+7 1
+7 5
+7 9
+7 8
+7 5
+7 5
+7 3
+7 2
+7 5
+6 9
+6 6
+6 7
+6 7
+6 6
+5 4
+5 5
+5 8
+5 7
+5 7
+5 5
+5 4
+5 1
+5 5
+4 2
+4 6
+4 1
+4 3
+3 7
+3 2
+3 2
+3 3
+3 4
+3 8
+3 8
+3 2
+2 4
+2 7
+2 5
+2 3
+1 1
+1 8
+1 7
+1 2
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 238 rows, 7320 columns and 7249 nonzeros
+Variable types: 0 continuous, 7320 integer (7320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 29.0000000
+Presolve removed 85 rows and 5636 columns
+Presolve time: 0.01s
+Presolved: 153 rows, 1684 columns, 3414 nonzeros
+Variable types: 0 continuous, 1684 integer (1684 binary)
+
+Root relaxation: objective 1.951667e+01, 273 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.51667    0   23   29.00000   19.51667  32.7%     -    0s
+H    0     0                      21.0000000   19.51667  7.06%     -    0s
+     0     0   19.56667    0   42   21.00000   19.56667  6.83%     -    0s
+     0     0   19.60312    0   48   21.00000   19.60312  6.65%     -    0s
+     0     0   19.76882    0   57   21.00000   19.76882  5.86%     -    0s
+     0     0   19.90000    0   47   21.00000   19.90000  5.24%     -    0s
+     0     0   20.00000    0   17   21.00000   20.00000  4.76%     -    0s
+
+Cutting planes:
+  Cover: 13
+  Clique: 3
+  MIR: 5
+  StrongCG: 5
+
+Explored 1 nodes (1018 simplex iterations) in 0.07 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 21 29 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[5]
+q[6]
+q[7]
+q[10]
+q[11]
+q[12]
+q[16]
+q[17]
+q[18]
+q[19]
+q[22]
+q[23]
+q[24]
+q[26]
+q[31]
+q[32]
+q[33]
+y[0]
+y[1]
+y[2]
+y[3]
+y[5]
+y[6]
+y[7]
+y[10]
+y[11]
+y[12]
+y[16]
+y[17]
+y[18]
+y[19]
+y[22]
+y[23]
+y[24]
+y[26]
+y[31]
+y[32]
+y[33]
+y[34]
+y[35]
+y[36]
+y[41]
+y[44]
+y[45]
+y[46]
+y[47]
+y[52]
+y[53]
+y[56]
+y[57]
+y[58]
+x[0][4]
+x[1][38]
+x[3][8]
+x[5][9]
+x[6][14]
+x[7][13]
+x[10][15]
+x[12][27]
+x[16][30]
+x[17][20]
+x[18][21]
+x[22][25]
+x[23][29]
+x[24][28]
+x[26][42]
+x[31][37]
+x[32][39]
+x[34][43]
+x[35][40]
+x[41][48]
+x[45][50]
+x[46][49]
+x[47][51]
+x[47][54]
+x[52][59]
+x[53][55]
+z[10][56]
+z[12][57]
+z[16][52]
+z[18][45]
+z[19][53]
+z[19][58]
+z[22][44]
+z[23][46]
+z[24][47]
+z[26][41]
+z[31][36]
+z[32][34]
+z[33][35]
+Obj: 21.0

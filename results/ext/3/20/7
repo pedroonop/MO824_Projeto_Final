@@ -1,0 +1,83 @@
+92 29
+84 95
+76 35
+59 61
+50 50
+49 31
+46 31
+38 36
+31 8
+28 1
+22 71
+21 48
+16 27
+14 23
+12 90
+6 7
+5 69
+5 37
+2 87
+1 48
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 78 rows, 840 columns and 820 nonzeros
+Variable types: 0 continuous, 840 integer (840 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 9.0000000
+Presolve removed 35 rows and 585 columns
+Presolve time: 0.00s
+Presolved: 43 rows, 255 columns, 525 nonzeros
+Variable types: 0 continuous, 255 integer (255 binary)
+
+Root relaxation: objective 3.461107e+00, 70 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    3.46111    0   26    9.00000    3.46111  61.5%     -    0s
+H    0     0                       4.0000000    3.46111  13.5%     -    0s
+
+Explored 1 nodes (77 simplex iterations) in 0.00 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 4 9 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.000000000000e+00, best bound 4.000000000000e+00, gap 0.0000%
+q[0]
+q[1]
+q[3]
+q[4]
+y[0]
+y[1]
+y[3]
+y[4]
+y[7]
+y[10]
+y[11]
+y[14]
+y[16]
+y[18]
+y[19]
+x[0][2]
+x[0][8]
+x[1][9]
+x[3][5]
+x[4][6]
+x[4][15]
+x[7][12]
+x[10][13]
+x[11][17]
+z[0][16]
+z[0][18]
+z[1][14]
+z[1][19]
+z[3][7]
+z[4][10]
+z[4][11]
+Obj: 4.0

@@ -13,6 +13,15 @@ for i in range(n):
 	h.append(int(h_))
 	w.append(int(w_))
 
+for i in range(n):
+	for j in range(i + 1, n):
+		if h[j] > h[i]:
+			h[i], h[j] = h[j], h[i]
+			w[i], w[j] = w[j], w[i]
+
+for i in range(n):
+	print(h[i], w[i])
+
 model = Model("bin_packing_2D")
 model.setParam("TimeLimit", 60)
 

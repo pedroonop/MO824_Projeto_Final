@@ -1,0 +1,190 @@
+10 3
+10 7
+10 3
+10 2
+10 4
+9 4
+9 2
+9 3
+9 3
+9 8
+9 4
+9 1
+9 10
+9 10
+8 7
+8 5
+8 9
+8 6
+8 10
+7 10
+7 6
+7 9
+7 3
+7 8
+7 1
+7 3
+7 9
+6 5
+6 5
+6 4
+6 2
+6 9
+6 8
+6 2
+6 3
+5 7
+5 10
+5 10
+5 4
+4 7
+4 5
+4 6
+4 6
+4 5
+4 3
+3 2
+3 5
+3 6
+3 5
+3 1
+3 1
+3 10
+2 2
+2 7
+2 10
+2 2
+2 10
+1 8
+1 6
+1 2
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 238 rows, 7320 columns and 7246 nonzeros
+Variable types: 0 continuous, 7320 integer (7320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 32.0000000
+Presolve removed 97 rows and 5865 columns
+Presolve time: 0.01s
+Presolved: 141 rows, 1455 columns, 2959 nonzeros
+Variable types: 0 continuous, 1455 integer (1455 binary)
+
+Root relaxation: objective 2.100000e+01, 268 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   21.00000    0   18   32.00000   21.00000  34.4%     -    0s
+H    0     0                      22.0000000   21.00000  4.55%     -    0s
+     0     0   21.00000    0    4   22.00000   21.00000  4.55%     -    0s
+H    0     0                      21.0000000   21.00000  0.00%     -    0s
+     0     0   21.00000    0   29   21.00000   21.00000  0.00%     -    0s
+
+Explored 1 nodes (903 simplex iterations) in 0.04 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 21 22 32 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[5]
+q[6]
+q[11]
+q[12]
+q[13]
+q[15]
+q[17]
+q[18]
+q[19]
+q[21]
+q[26]
+q[28]
+q[30]
+q[31]
+q[35]
+q[36]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[5]
+y[6]
+y[11]
+y[12]
+y[13]
+y[15]
+y[17]
+y[18]
+y[19]
+y[21]
+y[26]
+y[28]
+y[30]
+y[31]
+y[35]
+y[36]
+y[37]
+y[38]
+y[39]
+y[40]
+y[41]
+y[45]
+y[46]
+y[51]
+y[53]
+y[54]
+y[56]
+y[57]
+y[58]
+y[59]
+x[0][7]
+x[0][10]
+x[1][8]
+x[2][14]
+x[3][23]
+x[4][20]
+x[5][22]
+x[5][25]
+x[6][9]
+x[11][16]
+x[15][27]
+x[17][29]
+x[21][24]
+x[26][49]
+x[28][33]
+x[28][34]
+x[30][32]
+x[31][50]
+x[35][55]
+x[38][42]
+x[39][44]
+x[40][43]
+x[45][47]
+x[45][52]
+x[46][48]
+z[6][59]
+z[12][58]
+z[13][57]
+z[15][56]
+z[17][54]
+z[18][53]
+z[19][45]
+z[21][46]
+z[26][51]
+z[28][39]
+z[30][40]
+z[31][41]
+z[35][37]
+z[36][38]
+Obj: 21.0

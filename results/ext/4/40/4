@@ -1,0 +1,137 @@
+100 12
+98 38
+98 29
+97 25
+97 41
+95 26
+94 47
+92 38
+92 75
+91 11
+90 58
+85 45
+84 15
+83 40
+82 44
+82 7
+81 40
+80 12
+79 14
+78 19
+77 49
+77 3
+76 21
+76 2
+74 43
+73 99
+73 44
+72 50
+70 19
+70 17
+69 24
+69 25
+68 14
+68 50
+66 25
+25 34
+20 90
+15 72
+15 27
+7 80
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 158 rows, 3280 columns and 3239 nonzeros
+Variable types: 0 continuous, 3280 integer (3280 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 18.0000000
+Presolve removed 63 rows and 2537 columns
+Presolve time: 0.01s
+Presolved: 95 rows, 743 columns, 1513 nonzeros
+Variable types: 0 continuous, 743 integer (743 binary)
+
+Root relaxation: objective 1.122000e+01, 200 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.22000    0   14   18.00000   11.22000  37.7%     -    0s
+H    0     0                      13.0000000   11.22000  13.7%     -    0s
+H    0     0                      12.0000000   11.22000  6.50%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 5
+  Clique: 4
+  MIR: 2
+  StrongCG: 2
+
+Explored 1 nodes (474 simplex iterations) in 0.02 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 12 13 18 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[5]
+q[8]
+q[11]
+q[14]
+q[17]
+q[23]
+q[25]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[5]
+y[8]
+y[11]
+y[14]
+y[17]
+y[23]
+y[25]
+y[35]
+y[36]
+y[37]
+y[38]
+y[39]
+x[0][7]
+x[0][33]
+x[1][12]
+x[1][21]
+x[1][26]
+x[2][6]
+x[2][22]
+x[3][9]
+x[3][16]
+x[3][30]
+x[4][24]
+x[5][10]
+x[5][15]
+x[8][31]
+x[11][13]
+x[11][18]
+x[14][19]
+x[14][28]
+x[14][29]
+x[17][20]
+x[17][32]
+x[17][34]
+x[23][27]
+z[8][39]
+z[11][38]
+z[14][37]
+z[17][36]
+z[25][35]
+Obj: 12.0

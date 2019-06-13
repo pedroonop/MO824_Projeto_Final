@@ -1,0 +1,21 @@
+(h: 9 w: 6) bin: 0 h_: 0 w_: 0
+(h: 10 w: 4) bin: 0 h_: 0 w_: 6
+(h: 1 w: 9) bin: 1 h_: 0 w_: 0
+(h: 9 w: 1) bin: 1 h_: 0 w_: 9
+(h: 9 w: 9) bin: 2 h_: 0 w_: 0
+(h: 9 w: 9) bin: 3 h_: 0 w_: 0
+(h: 3 w: 6) bin: 4 h_: 0 w_: 0
+(h: 8 w: 4) bin: 4 h_: 0 w_: 6
+(h: 8 w: 6) bin: 5 h_: 0 w_: 0
+(h: 5 w: 2) bin: 5 h_: 0 w_: 6
+(h: 5 w: 7) bin: 6 h_: 0 w_: 0
+(h: 7 w: 3) bin: 6 h_: 0 w_: 7
+(h: 6 w: 7) bin: 7 h_: 0 w_: 0
+(h: 6 w: 2) bin: 7 h_: 0 w_: 7
+(h: 6 w: 5) bin: 8 h_: 0 w_: 0
+(h: 5 w: 5) bin: 8 h_: 0 w_: 5
+(h: 5 w: 9) bin: 9 h_: 0 w_: 0
+(h: 2 w: 7) bin: 4 h_: 8 w_: 0
+(h: 2 w: 3) bin: 4 h_: 8 w_: 7
+(h: 1 w: 6) bin: 1 h_: 9 w_: 0
+10

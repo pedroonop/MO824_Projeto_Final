@@ -1,0 +1,274 @@
+100 20
+100 39
+100 41
+100 26
+100 43
+100 29
+98 37
+97 18
+97 44
+97 37
+97 21
+97 30
+96 2
+95 45
+95 43
+95 26
+94 22
+94 31
+94 27
+94 25
+93 43
+92 9
+92 50
+90 46
+90 47
+89 44
+89 14
+87 10
+87 39
+86 44
+86 44
+85 52
+84 30
+84 60
+83 27
+83 42
+83 3
+82 98
+82 7
+82 49
+81 55
+81 32
+81 82
+80 35
+80 9
+79 10
+78 31
+78 13
+77 48
+77 50
+76 20
+76 9
+76 25
+76 44
+76 30
+76 35
+75 49
+75 6
+75 18
+74 47
+74 7
+73 2
+73 1
+72 18
+71 19
+71 18
+71 56
+70 37
+70 26
+70 37
+69 30
+69 44
+69 22
+68 26
+68 20
+67 23
+67 6
+67 56
+67 4
+66 8
+66 42
+64 82
+63 75
+59 99
+55 92
+51 52
+42 94
+38 30
+32 67
+31 87
+30 33
+27 11
+27 46
+27 41
+25 15
+22 92
+21 46
+18 29
+14 81
+7 83
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 398 rows, 20200 columns and 20094 nonzeros
+Variable types: 0 continuous, 20200 integer (20200 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 39.0000000
+Presolve removed 155 rows and 15754 columns
+Presolve time: 0.03s
+Presolved: 243 rows, 4446 columns, 8962 nonzeros
+Variable types: 0 continuous, 4446 integer (4446 binary)
+
+Root relaxation: objective 2.923000e+01, 409 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   29.23000    0   25   39.00000   29.23000  25.1%     -    0s
+H    0     0                      32.0000000   29.23000  8.66%     -    0s
+H    0     0                      31.0000000   29.23000  5.71%     -    0s
+H    0     0                      30.0000000   29.23000  2.57%     -    0s
+
+Explored 1 nodes (2794 simplex iterations) in 0.15 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 30 31 32 39 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[5]
+q[6]
+q[7]
+q[8]
+q[11]
+q[12]
+q[14]
+q[15]
+q[18]
+q[23]
+q[29]
+q[30]
+q[31]
+q[32]
+q[40]
+q[41]
+q[42]
+q[46]
+q[57]
+q[63]
+q[69]
+q[71]
+q[76]
+q[83]
+q[84]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[5]
+y[6]
+y[7]
+y[8]
+y[11]
+y[12]
+y[14]
+y[15]
+y[18]
+y[23]
+y[29]
+y[30]
+y[31]
+y[32]
+y[40]
+y[41]
+y[42]
+y[46]
+y[57]
+y[63]
+y[69]
+y[71]
+y[76]
+y[83]
+y[84]
+y[86]
+y[87]
+y[88]
+y[89]
+y[91]
+y[93]
+y[94]
+y[95]
+y[97]
+y[99]
+x[0][33]
+x[0][50]
+x[1][24]
+x[1][26]
+x[2][28]
+x[3][54]
+x[3][67]
+x[4][20]
+x[4][36]
+x[4][44]
+x[5][21]
+x[5][27]
+x[5][49]
+x[6][9]
+x[6][73]
+x[7][13]
+x[7][38]
+x[7][70]
+x[8][10]
+x[8][55]
+x[11][25]
+x[11][68]
+x[12][37]
+x[14][16]
+x[14][19]
+x[14][51]
+x[15][17]
+x[15][35]
+x[18][22]
+x[18][75]
+x[23][34]
+x[23][52]
+x[29][39]
+x[29][60]
+x[30][47]
+x[30][80]
+x[31][48]
+x[32][56]
+x[32][64]
+x[40][43]
+x[40][45]
+x[41][59]
+x[41][74]
+x[42][58]
+x[46][53]
+x[46][72]
+x[57][61]
+x[57][62]
+x[57][79]
+x[57][82]
+x[63][65]
+x[63][66]
+x[69][85]
+x[71][77]
+x[76][78]
+x[76][81]
+x[87][92]
+x[88][90]
+x[91][98]
+x[94][96]
+z[41][99]
+z[42][97]
+z[46][95]
+z[57][94]
+z[63][93]
+z[69][91]
+z[71][89]
+z[76][88]
+z[83][87]
+z[84][86]
+Obj: 30.0

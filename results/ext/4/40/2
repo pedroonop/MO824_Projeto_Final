@@ -1,0 +1,140 @@
+99 20
+99 28
+95 43
+95 46
+93 37
+93 13
+92 12
+91 20
+89 47
+89 12
+88 28
+88 13
+87 38
+82 16
+82 53
+82 17
+82 82
+81 5
+80 17
+79 9
+78 8
+78 44
+76 49
+74 12
+74 13
+72 50
+71 28
+71 42
+71 24
+70 50
+69 5
+67 19
+45 26
+44 18
+35 24
+32 47
+16 19
+15 7
+11 72
+4 13
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 158 rows, 3280 columns and 3240 nonzeros
+Variable types: 0 continuous, 3280 integer (3280 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 13.0000000
+Presolve removed 49 rows and 2435 columns
+Presolve time: 0.01s
+Presolved: 109 rows, 845 columns, 1727 nonzeros
+Variable types: 0 continuous, 845 integer (845 binary)
+
+Root relaxation: objective 9.755212e+00, 281 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    9.75521    0   20   13.00000    9.75521  25.0%     -    0s
+H    0     0                      11.0000000    9.75521  11.3%     -    0s
+     0     0    9.85332    0   31   11.00000    9.85332  10.4%     -    0s
+     0     0    9.92805    0   38   11.00000    9.92805  9.75%     -    0s
+     0     0    9.98566    0   45   11.00000    9.98566  9.22%     -    0s
+     0     0    9.99690    0   55   11.00000    9.99690  9.12%     -    0s
+     0     0    9.99690    0   55   11.00000    9.99690  9.12%     -    0s
+     0     0     cutoff    0        11.00000   11.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 22
+  Clique: 9
+  MIR: 6
+  StrongCG: 3
+
+Explored 1 nodes (766 simplex iterations) in 0.04 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 11 13 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.100000000000e+01, best bound 1.100000000000e+01, gap 0.0000%
+q[0]
+q[1]
+q[2]
+q[3]
+q[4]
+q[8]
+q[12]
+q[16]
+q[18]
+q[23]
+q[32]
+y[0]
+y[1]
+y[2]
+y[3]
+y[4]
+y[8]
+y[12]
+y[16]
+y[18]
+y[23]
+y[32]
+y[35]
+y[36]
+y[38]
+y[39]
+x[0][9]
+x[0][17]
+x[0][19]
+x[0][29]
+x[1][14]
+x[1][31]
+x[2][6]
+x[2][10]
+x[2][15]
+x[3][5]
+x[3][7]
+x[3][11]
+x[3][20]
+x[4][13]
+x[4][21]
+x[8][33]
+x[12][25]
+x[16][24]
+x[18][22]
+x[18][26]
+x[23][27]
+x[23][28]
+x[23][30]
+x[32][34]
+x[35][37]
+z[3][39]
+z[12][38]
+z[23][36]
+z[32][35]
+Obj: 11.0
